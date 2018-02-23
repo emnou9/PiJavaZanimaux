@@ -56,6 +56,8 @@ public class FXMLDocumentController implements Initializable {
     private TableColumn<produit, String> description;
     @FXML
     private JFXButton AfficherProduitPB;
+    @FXML
+    private TableColumn<?, ?> imagep;
     
     
     
@@ -103,6 +105,7 @@ public class FXMLDocumentController implements Initializable {
                 return new ReadOnlyObjectWrapper(param.getValue().getDescription());
             }
         });
+       
         
     }    
 

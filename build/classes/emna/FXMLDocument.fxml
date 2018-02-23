@@ -27,7 +27,8 @@
                   <TableColumn fx:id="type" prefWidth="54.0" style="-fx-background-color: #9F551E;" text="Type" />
                   <TableColumn fx:id="quantite" prefWidth="69.0" style="-fx-background-color: #9F551E;" text="Quantité" />
                   <TableColumn fx:id="prix" prefWidth="56.0" style="-fx-background-color: #9F551E;" text="Prix" />
-                  <TableColumn fx:id="description" prefWidth="120.0" style="-fx-background-color: #9F551E;" text="Description" />
+                  <TableColumn fx:id="description" prefWidth="75.0" style="-fx-background-color: #9F551E;" text="Description" />
+                  <TableColumn fx:id="imagep" prefWidth="45.0" style="-fx-background-color: #9F551E;" text="image$" />
               </columns>
             </TableView>
             <JFXButton layoutX="41.0" layoutY="340.0" onAction="#ajouter" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #9F551E;" text="Ajouter" textFill="WHITE" />

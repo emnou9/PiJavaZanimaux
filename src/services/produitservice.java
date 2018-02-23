@@ -122,33 +122,7 @@ public class produitservice {
         }
     return list ; 
       }
-     public static List<produit> selectProduit1 ()
-    {
-        List<produit> list =new ArrayList<>() ; 
-    String req ; 
-        req = "SELECT id, nom_produit, type, quantite, prix, description FROM produit";
-        try { 
-            PreparedStatement ste = ds.getConnection().prepareStatement(req) ;
-             ResultSet result =ste.executeQuery() ; 
-            while (result.next()){
-            list.add(new produit(
-                                    result.getInt("id"),
-                                    result.getString("nom_produit"),
-                                    result.getString("type"),
-                                    result.getInt("quantite"),
-                                    result.getInt("prix"),
-                                    result.getString("description")
-                         
-                   
-                                    
-            )); 
-            }
-            
-        } catch (SQLException ex) {
-            
-        }
-    return list ; 
-      }
+   
     
     
     
