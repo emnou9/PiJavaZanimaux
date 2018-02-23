@@ -11,41 +11,41 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="494.0" prefWidth="444.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="emna.AjouterController">
    <children>
+      <AnchorPane prefHeight="90.0" prefWidth="446.0" style="-fx-background-color: #FFA07A;">
+         <children>
+            <ImageView fitHeight="90.0" fitWidth="96.0" layoutX="175.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../Zanimaux/rrr.PNG" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
       <AnchorPane layoutX="10.0" layoutY="10.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="446.0">
          <children>
-            <AnchorPane layoutX="-10.0" layoutY="-10.0" prefHeight="90.0" prefWidth="446.0" style="-fx-background-color: #F6DC12;">
+            <AnchorPane layoutX="-10.0" layoutY="78.0" prefHeight="408.0" prefWidth="446.0" style="-fx-background-color: #FFE4E1;">
                <children>
-                  <ImageView fitHeight="90.0" fitWidth="96.0" layoutX="175.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../../../../../logo.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </AnchorPane>
-            <AnchorPane layoutX="-10.0" layoutY="80.0" prefHeight="406.0" prefWidth="446.0" style="-fx-background-color: #F6DC12;">
-               <children>
-                  <JFXButton layoutX="335.0" layoutY="344.0" onAction="#ajouter" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #9F551E;" text="Valider" textFill="WHITE" />
-                  <Label layoutX="38.0" layoutY="35.0" text="Nom Produit" textFill="#9f551e">
+                  <JFXButton layoutX="335.0" layoutY="344.0" onAction="#ajouter" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #9B59B6;" text="Valider" textFill="WHITE" />
+                  <Label layoutX="38.0" layoutY="35.0" text="Nom Produit">
                      <font>
                         <Font name="Cambria Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="33.0" layoutY="219.0" text="Description" textFill="#9f551e">
+                  <Label layoutX="33.0" layoutY="219.0" text="Description">
                      <font>
                         <Font name="Cambria Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="38.0" layoutY="165.0" text="Prix" textFill="#9f551e">
+                  <Label layoutX="38.0" layoutY="165.0" text="Prix">
                      <font>
                         <Font name="Cambria Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="38.0" layoutY="122.0" text="Quantité" textFill="#9f551e">
+                  <Label layoutX="38.0" layoutY="122.0" text="Quantité">
                      <font>
                         <Font name="Cambria Bold" size="15.0" />
                      </font>
                   </Label>
-                  <Label layoutX="38.0" layoutY="82.0" text="Type" textFill="#9f551e">
+                  <Label layoutX="38.0" layoutY="82.0" text="Type">
                      <font>
                         <Font name="Cambria Bold" size="15.0" />
                      </font>
@@ -55,9 +55,12 @@
                   <JFXTextField fx:id="prix" focusColor="#9f551e" layoutX="187.0" layoutY="163.0" unFocusColor="RED" />
                   <JFXTextField fx:id="quantite" focusColor="#9f551e" layoutX="187.0" layoutY="120.0" unFocusColor="RED" />
                   <JFXTextArea fx:id="description" focusColor="#9f551e" layoutX="181.0" layoutY="200.0" prefHeight="79.0" prefWidth="220.0" unFocusColor="RED" />
-                  <JFXButton fx:id="UploadImage" layoutX="19.0" layoutY="298.0" onAction="#image" text="Image du produit" />
-                  <ImageView fx:id="photo" fitHeight="70.0" fitWidth="83.0" layoutX="165.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true" />
-                  <JFXButton layoutX="41.0" layoutY="344.0" onAction="#retourner" text="Retour" />
+                  <JFXButton fx:id="UploadImage" layoutX="19.0" layoutY="298.0" onAction="#image" text="Image du produit">
+                     <font>
+                        <Font name="Cambria Bold" size="15.0" />
+                     </font></JFXButton>
+                  <ImageView fx:id="photo" fitHeight="70.0" fitWidth="83.0" layoutX="165.0" layoutY="310.0" pickOnBounds="true" preserveRatio="true" style="-fx-background-color: #FFE4E1;" />
+                  <JFXButton layoutX="41.0" layoutY="344.0" onAction="#retourner" style="-fx-background-color: #9B59B6;" text="Retour" textFill="WHITE" />
                </children>
             </AnchorPane>
          </children>

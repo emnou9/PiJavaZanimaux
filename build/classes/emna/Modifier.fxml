@@ -24,7 +24,7 @@
             </AnchorPane>
             <AnchorPane layoutY="98.0" prefHeight="397.0" prefWidth="446.0" style="-fx-background-color: #FFE4E1;">
                <children>
-                  <JFXButton layoutX="335.0" layoutY="344.0" onAction="#Modifier" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #9F551E;" text="Modifier" textFill="WHITE" />
+                  <JFXButton layoutX="335.0" layoutY="344.0" onAction="#Modifier" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #9B59B6;" text="Modifier" textFill="WHITE" />
                   <Label layoutX="38.0" layoutY="35.0" text="Nom Produit" textFill="#9f551e">
                      <font>
                         <Font name="Cambria Bold" size="15.0" />
@@ -55,7 +55,7 @@
                   <JFXTextArea fx:id="description" focusColor="#9f551e" layoutX="187.0" layoutY="219.0" prefHeight="79.0" prefWidth="220.0" unFocusColor="RED" />
                   <JFXTextField fx:id="nom_produit" focusColor="#9f551e" layoutX="187.0" layoutY="33.0" unFocusColor="RED" />
                   <JFXTextField fx:id="type" focusColor="#9f551e" layoutX="187.0" layoutY="80.0" unFocusColor="RED" />
-                  <JFXButton layoutX="32.0" layoutY="344.0" onAction="#retourner" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #9F551E;" text="Retour" textFill="WHITE" />
+                  <JFXButton layoutX="32.0" layoutY="344.0" onAction="#retourner" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #9B59B6;" text="Retour" textFill="WHITE" />
                   <Label fx:id="a" layoutX="39.0" layoutY="290.0" />
                </children>
             </AnchorPane>

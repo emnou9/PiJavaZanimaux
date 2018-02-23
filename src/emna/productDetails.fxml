@@ -6,14 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="emna.ProductDetailsController">
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" style="-fx-background-color: #FFA07A;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="emna.ProductDetailsController">
    <children>
-      <ListView fx:id="ProductListView" layoutX="13.0" layoutY="75.0" prefHeight="266.0" prefWidth="570.0" />
-      <Label layoutX="264.0" layoutY="36.0" prefHeight="39.0" prefWidth="69.0" text="Shop">
+      <ListView fx:id="ProductListView" layoutX="13.0" layoutY="75.0" prefHeight="266.0" prefWidth="570.0" style="-fx-background-color: #FFE4E1;" />
+      <Label layoutX="246.0" layoutY="14.0" prefHeight="39.0" prefWidth="69.0" text="Shop" textFill="#1b0e0e">
          <font>
             <Font size="27.0" />
          </font>
       </Label>
-      <JFXButton layoutX="85.0" layoutY="345.0" onAction="#retourner" text="Retourner" />
+      <JFXButton layoutX="85.0" layoutY="345.0" onAction="#retourner" style="-fx-background-color: #9B59B6;" text="Retourner" textFill="WHITE" />
    </children>
 </AnchorPane>
