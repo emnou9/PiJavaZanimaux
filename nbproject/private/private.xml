@@ -5,10 +5,12 @@
         <group>
             <file>file:/D:/3A/emna/src/emna/Emna.java</file>
             <file>file:/D:/3A/emna/src/services/produitservice.java</file>
+            <file>file:/D:/3A/emna/src/emna/ProductDetailsController.java</file>
             <file>file:/D:/3A/emna/src/entities/produit.java</file>
-            <file>file:/D:/3A/emna/src/emna/AjouterController.java</file>
             <file>file:/D:/3A/emna/src/emna/ModifierController.java</file>
+            <file>file:/D:/3A/emna/src/emna/AjouterController.java</file>
             <file>file:/D:/3A/emna/src/emna/FXMLDocumentController.java</file>
+            <file>file:/D:/3A/emna/src/emna/productDetails.fxml</file>
         </group>
     </open-files>
 </project-private>
