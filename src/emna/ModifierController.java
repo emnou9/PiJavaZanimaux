@@ -54,22 +54,26 @@ private String path="";
     /**
      * Initializes the controller class.
      */
-    public ModifierController(produit p){
-        this.p=p;
-    }
+ 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         nom_produit.setText(p.getNomProduit());
         type.setText(p.getType());
-        prix.setText(String.valueOf(p.getPrix()));
         quantite.setText(String.valueOf(p.getQuantite()));
+        prix.setText(String.valueOf(p.getPrix()));
         description.setText(p.getDescription());
        
     }    
 
     @FXML
     private void Modifier(ActionEvent event) {
+        
+        //        nom_produit.setText(p.getNomProduit());
+//        type.setText(p.getType());
+//        prix.setText(String.valueOf(p.getPrix()));
+//        quantite.setText(String.valueOf(p.getQuantite()));
+//        description.setText(p.getDescription());
         
                 p.setNomProduit(nom_produit.getText());
                 p.setType(type.getText());
@@ -78,11 +82,12 @@ private String path="";
                 p.setDescription(description.getText());
                 
                 
-                
+       
 
                 
                 produitservice pv=new produitservice();
                 pv.updateProduit(p);
+                System.out.println("teeeeeeeest"+p);
             try {
             Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
             Scene scene = new Scene(root);
