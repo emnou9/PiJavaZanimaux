@@ -233,7 +233,7 @@ public class FXMLDocumentController implements Initializable {
                 Alert alert = new Alert(AlertType.INFORMATION);
                 alert.setTitle("PDF export");
                 alert.setHeaderText(null);
-                alert.setContentText("Fichier PDF créé");
+                alert.setContentText("Fichier Excel créé");
                 alert.showAndWait();
                 preparedStatement.close();
                 rs.close();
