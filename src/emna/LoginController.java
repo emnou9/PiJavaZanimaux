@@ -58,10 +58,10 @@ DataSource ds =DataSource.getInstance();
        
             preparedStatement = ds.getConnection().prepareStatement(sql_query);
             boolean status =preparedStatement.execute();
-            System.out.println("achraf");
+            System.out.println("emnaaaaa");
             if(status){
                 System.out.println("Login success");
-               Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+               Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
             Scene scene = new Scene(root);
             Stage s = new Stage();
             s.setTitle("Login");

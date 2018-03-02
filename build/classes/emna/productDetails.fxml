@@ -15,5 +15,6 @@
          </font>
       </Label>
       <JFXButton layoutX="85.0" layoutY="345.0" onAction="#retourner" style="-fx-background-color: #9B59B6;" text="Retourner" textFill="WHITE" />
+      <JFXButton layoutX="483.0" layoutY="163.0" onAction="#Commander" style="-fx-background-color: #9B59B6;" text="Commander" textFill="WHITE" />
    </children>
 </AnchorPane>

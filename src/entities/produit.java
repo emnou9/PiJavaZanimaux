@@ -17,10 +17,25 @@ public class produit {
     private String nomProduit;
     private String type;
     private int quantite;
-    private int prix; 
+    private int prix;
     private String description;
     private String image;
+    private Double stat;
 
+    public produit(String type, Double stat) {
+        this.type = type;
+        this.stat = stat;
+    }
+    
+
+    public Double getStat() {
+        return stat;
+    }
+
+    public void setStat(Double stat) {
+        this.stat = stat;
+    }
+    
     public produit(int id, String nomProduit, String type, int quantite, int prix, String description) {
         this.id = id;
         this.nomProduit = nomProduit;
@@ -31,6 +46,7 @@ public class produit {
         //this.image = image;
     }
 
+    
     public produit(int id,String nomProduit, String type, int quantite, int prix, String description,String image) {
                 this.id = id;
 
@@ -52,9 +68,7 @@ public class produit {
         this.image = image;
     }
 
-    public produit(String text, String text0, int parseInt, int parseInt0, String text1) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+   
 
    
 
@@ -120,7 +134,13 @@ public class produit {
     }
     
     
-    
+    public produit(String nomProduit, String type, int quantite, int prix, String description) {
+        this.nomProduit = nomProduit;
+        this.type = type;
+        this.quantite = quantite;
+        this.prix = prix;
+        this.description = description;
+    }
     
     
     

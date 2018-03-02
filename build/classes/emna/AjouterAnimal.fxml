@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="emna.AjouterAnimalController">
+   <children>
+      <AnchorPane layoutX="3.0" layoutY="4.0" prefHeight="388.0" prefWidth="592.0">
+         <children>
+            <JFXTextField fx:id="EspeceTF" layoutX="160.0" layoutY="45.0" />
+            <JFXTextField fx:id="RaceTF" layoutX="160.0" layoutY="101.0" />
+            <JFXTextField fx:id="AgeTF" layoutX="160.0" layoutY="161.0" />
+            <JFXTextField fx:id="PrixTF" layoutX="160.0" layoutY="226.0" />
+            <JFXButton fx:id="ajouterAnimalBT" layoutX="228.0" layoutY="341.0" onAction="#ajouterAnimal" style="-fx-background-color: #9B59B6;" text="Ajouter Animal" textFill="#f8f5f5" />
+            <JFXButton fx:id="uploadimageAnimalBT" layoutX="433.0" layoutY="316.0" onAction="#linkImage" style="-fx-background-color: #9B59B6;" text="Load" textFill="#f5f2f2" />
+            <Label layoutX="70.0" layoutY="62.0" prefHeight="17.0" prefWidth="52.0" text="Espece  :" />
+            <Label layoutX="67.0" layoutY="118.0" prefHeight="17.0" prefWidth="42.0" text="Race  :" />
+            <Label layoutX="67.0" layoutY="178.0" prefHeight="17.0" prefWidth="42.0" text="Age  :" />
+            <Label layoutX="78.0" layoutY="243.0" text="Prix" />
+            <Label layoutX="76.0" layoutY="307.0" prefHeight="17.0" prefWidth="52.0" text="Sexe  :" />
+            <ImageView fx:id="photoAnimal" fitHeight="224.0" fitWidth="200.0" layoutX="341.0" layoutY="66.0" pickOnBounds="true" preserveRatio="true" />
+            <Label graphicTextGap="8.0" layoutX="67.0" layoutY="14.0" prefHeight="30.0" prefWidth="394.0" text="N'hésitez pas à ajouter Des Animaux !!" textFill="#dd1212">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Label>
+            <ChoiceBox fx:id="tchoice" layoutX="153.0" layoutY="295.0" prefWidth="150.0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

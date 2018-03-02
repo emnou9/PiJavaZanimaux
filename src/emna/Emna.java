@@ -13,10 +13,7 @@ import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-/**
- *
- * @author Sofiene Laouini
- */
+
 public class Emna extends Application {
     
     @Override

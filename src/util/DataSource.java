@@ -11,10 +11,8 @@ import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-/**
- *
- * @author Sofiene Laouini
- */
+
+ 
 public class DataSource {
     
     private   String url="jdbc:mysql://localhost:3306/pidev?autoReconnect=true&useSSL=false" ; 

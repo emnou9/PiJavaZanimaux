@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="emna.AfficherAnimalController">
+   <children>
+      <AnchorPane layoutX="3.0" layoutY="2.0" prefHeight="400.0" prefWidth="593.0">
+         <children>
+            <TableView fx:id="table" layoutX="28.0" layoutY="23.0" prefHeight="323.0" prefWidth="547.0">
+              <columns>
+                <TableColumn fx:id="id" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="espece" prefWidth="113.0" text="Espece" />
+                  <TableColumn fx:id="race" prefWidth="79.0" text="Race" />
+                  <TableColumn fx:id="age" prefWidth="85.0" text="Age" />
+                  <TableColumn fx:id="prix" prefWidth="90.0" text="Prix" />
+                  <TableColumn fx:id="sexe" prefWidth="91.0" text="Sexe" />
+              </columns>
+            </TableView>
+            <JFXButton fx:id="AjouterBT" layoutX="129.0" layoutY="361.0" onAction="#ajouterAnimal" style="-fx-background-color: #9B59B6;" text="Ajouter Animal " textFill="#f5f0f0" />
+            <JFXButton fx:id="suppromerBT" layoutX="271.0" layoutY="361.0" onAction="#supprimerAnimal" style="-fx-background-color: #9B59B6;" text="Supprimer" textFill="#fcfafa" />
+            <JFXButton fx:id="AjouterBT1" layoutX="28.0" layoutY="361.0" onAction="#retour" style="-fx-background-color: #9B59B6;" text="Retour" textFill="#f5f0f0" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

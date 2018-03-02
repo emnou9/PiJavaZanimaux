@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.image.Image?>
@@ -8,25 +11,26 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="495.0" prefWidth="446.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="emna.FXMLDocumentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="499.0" prefWidth="744.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="emna.FXMLDocumentController">
    <children>
-      <AnchorPane prefHeight="90.0" prefWidth="446.0" style="-fx-background-color: #FFA07A;">
+      <AnchorPane prefHeight="90.0" prefWidth="743.0" style="-fx-background-color: #FFA07A;">
          <children>
             <ImageView fitHeight="90.0" fitWidth="96.0" layoutX="169.0" layoutY="11.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../../Zanimaux/rrr.PNG" />
                </image>
             </ImageView>
-            <JFXButton fx:id="closebutton" layoutX="420.0" layoutY="-1.0" onAction="#closeButtonAction" prefHeight="8.0" prefWidth="24.0" text="X">
+            <JFXButton fx:id="closebutton" layoutX="705.0" layoutY="11.0" onAction="#closeButtonAction" prefHeight="8.0" prefWidth="24.0" text="X">
                <font>
                   <Font name="System Bold Italic" size="12.0" />
                </font>
             </JFXButton>
+            <Label fx:id="user" layoutX="31.0" layoutY="28.0" prefHeight="17.0" prefWidth="90.0" />
          </children>
       </AnchorPane>
       <AnchorPane layoutY="101.0" prefHeight="397.0" prefWidth="446.0" style="-fx-background-color: #FFE4E1;">
          <children>
-            <TableView fx:id="table" layoutY="14.0" prefHeight="304.0" prefWidth="446.0">
+            <TableView fx:id="table" layoutY="14.0" onMouseClicked="#RecupererProduit" prefHeight="304.0" prefWidth="446.0">
               <columns>
                 <TableColumn fx:id="id" prefWidth="46.0" style="-fx-background-color: #D7BDE2;" text="ID" />
                 <TableColumn fx:id="nomProduit" prefWidth="100.0" style="-fx-background-color: #D7BDE2;" text="Nom Produit" />
@@ -37,11 +41,19 @@
               </columns>
             </TableView>
             <JFXButton layoutX="14.0" layoutY="328.0" onAction="#ajouter" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #9B59B6;" text="Ajouter" textFill="WHITE" />
-            <JFXButton layoutX="326.0" layoutY="340.0" onAction="#supprimer" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #9B59B6;" text="Supprimer" textFill="WHITE" />
-            <JFXButton fx:id="btnmod" layoutX="232.0" layoutY="340.0" onAction="#modifier" style="-fx-background-color: #9B59B6;" text="Modifier" textFill="WHITE" />
-            <JFXButton fx:id="AfficherProduitPB" layoutX="104.0" layoutY="328.0" onAction="#AfficherProduit" prefWidth="54.0" style="-fx-background-color: #9B59B6;" text="Shop" textFill="#fffffff5" />
-            <JFXButton fx:id="exportBT" layoutX="67.0" layoutY="365.0" onAction="#exportToPDF" prefHeight="25.0" prefWidth="141.0" style="-fx-background-color: #9B59B6;" text="exporter en excel" textFill="WHITE" />
+            <JFXButton layoutX="314.0" layoutY="328.0" onAction="#supprimer" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #9B59B6;" text="Supprimer" textFill="WHITE" />
+            <JFXButton fx:id="btnmod" layoutX="223.0" layoutY="328.0" onAction="#modifier" style="-fx-background-color: #9B59B6;" text="Modifier" textFill="WHITE" />
+            <JFXButton fx:id="AfficherProduitPB" layoutX="104.0" layoutY="328.0" onAction="#AfficherProduit" prefHeight="25.0" prefWidth="61.0" style="-fx-background-color: #9B59B6;" text="Shop" textFill="#fffffff5" />
+            <JFXButton fx:id="exportBT" layoutX="27.0" layoutY="365.0" onAction="#exportToExcel" prefHeight="25.0" prefWidth="141.0" style="-fx-background-color: #9B59B6;" text="exporter en excel" textFill="WHITE" />
+            <JFXButton fx:id="commanderBT" layoutX="199.0" layoutY="365.0" onAction="#commander" style="-fx-background-color: #9B59B6;" text="Commander" textFill="WHITE" />
+            <JFXButton fx:id="stat" layoutX="314.0" layoutY="365.0" onAction="#statistique" prefHeight="25.0" prefWidth="83.0" style="-fx-background-color: #9B59B6;" text="Statistique" textFill="WHITE" />
          </children>
       </AnchorPane>
+      <JFXTextField fx:id="IdProduit" editable="false" layoutX="548.0" layoutY="133.0" />
+      <JFXTextField fx:id="NomProduitTextField" layoutX="548.0" layoutY="185.0" />
+      <JFXTextField fx:id="QuantiteProduitTextField" layoutX="548.0" layoutY="300.0" />
+      <JFXTextField fx:id="PrixProduitTextField" layoutX="548.0" layoutY="361.0" />
+      <JFXTextField fx:id="DescriptionProduitTextField" layoutX="548.0" layoutY="419.0" />
+      <ChoiceBox fx:id="tchoice" layoutX="541.0" layoutY="250.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

@@ -3,17 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/3A/emna/src/emna/Emna.java</file>
-            <file>file:/D:/3A/emna/src/emna/LoginController.java</file>
-            <file>file:/D:/3A/emna/src/services/produitservice.java</file>
-            <file>file:/D:/3A/emna/src/emna/ProductDetailsController.java</file>
-            <file>file:/D:/3A/emna/src/emna/login.fxml</file>
-            <file>file:/D:/3A/emna/src/entities/produit.java</file>
-            <file>file:/D:/3A/emna/src/emna/ModifierController.java</file>
-            <file>file:/D:/3A/emna/src/emna/AjouterController.java</file>
-            <file>file:/D:/3A/emna/src/emna/FXMLDocumentController.java</file>
-            <file>file:/D:/3A/emna/src/emna/productDetails.fxml</file>
-            <file>file:/D:/3A/emna/src/emna/Modifier.fxml</file>
+            <file>file:/D:/3A/emna/src/com/zanimaux/gui/ProduitController.java</file>
         </group>
     </open-files>
 </project-private>

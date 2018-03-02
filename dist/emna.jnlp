@@ -8,13 +8,15 @@
   </information>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="emna.jar" size="28453" download="eager" />
+    <jar href="emna.jar" size="59151" download="eager" />
+    <jar href="lib\TrayTester.jar" size="52070" download="eager" />
     <jar href="lib\commons-codec-1.10.jar" size="284184" download="eager" />
     <jar href="lib\commons-collections4-4.1.jar" size="751238" download="eager" />
     <jar href="lib\commons-logging-1.2.jar" size="61829" download="eager" />
     <jar href="lib\jfoenix-8.0.1.jar" size="2405715" download="eager" />
     <jar href="lib\junit-4.12.jar" size="314932" download="eager" />
     <jar href="lib\log4j-1.2.17.jar" size="489884" download="eager" />
+    <jar href="lib\mail.jar" size="521000" download="eager" />
     <jar href="lib\mysql-connector-java-5.1.23-bin.jar" size="834126" download="eager" />
     <jar href="lib\poi-3.17.jar" size="2701171" download="eager" />
     <jar href="lib\poi-ooxml-3.17.jar" size="1479023" download="eager" />

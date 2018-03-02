@@ -20,6 +20,9 @@ import java.sql.Date;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.collections.ObservableListBase;
 import javafx.embed.swing.SwingFXUtils;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,6 +31,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.paint.Color;
@@ -42,7 +46,6 @@ public class AjouterController implements Initializable {
     private String path="";
     @FXML
     private JFXTextField nom_produit;
-    @FXML
     private JFXTextField type;
     @FXML
     private JFXTextField prix;
@@ -56,6 +59,8 @@ public class AjouterController implements Initializable {
     private File file;
     @FXML
     private JFXButton UploadImage;
+    @FXML
+    private ChoiceBox<String> tchoice;
     
 
     /**
@@ -63,14 +68,14 @@ public class AjouterController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+                ObservableList<String> c = FXCollections.observableArrayList("Accesoires","produits de lavage ","niches");
+                tchoice.setItems(c);
     }    
 
     @FXML
     private void ajouter(ActionEvent event) throws IOException {
-        
         produit p;
-        p = new produit(nom_produit.getText(),type.getText(),Integer.parseInt(quantite.getText()),Integer.parseInt(prix.getText()),description.getText(),path);
+        p = new produit(nom_produit.getText(),tchoice.getValue(),Integer.parseInt(quantite.getText()),Integer.parseInt(prix.getText()),description.getText(),path);
         produitservice ps = new produitservice();
         produitservice.insererProduit(p);
         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
@@ -108,7 +113,7 @@ public class AjouterController implements Initializable {
 
     @FXML
     private void retourner(ActionEvent event) throws IOException {
-         Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
+         Parent root = FXMLLoader.load(getClass().getResource("Home.fxml"));
             Scene scene = new Scene(root);
             scene.setFill(Color.TRANSPARENT);
             Stage s = (Stage)((Node)event.getSource()).getScene().getWindow();

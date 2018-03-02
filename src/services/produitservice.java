@@ -45,7 +45,7 @@ public class produitservice {
     }
     
      
-    public static void updateProduit (produit p )
+    public static void updateProduit (produit p ,int id)
     {
     String req="UPDATE produit SET nom_produit=?,type=?,quantite=?,prix=?,description=? WHERE id =?" ; 
         try { 
@@ -59,7 +59,7 @@ public class produitservice {
             
             
             
-            ste.setInt(6,p.getId()) ;
+            ste.setInt(6,id) ;
             ste.executeUpdate() ; 
             
         } catch (SQLException ex) {
@@ -121,7 +121,7 @@ public class produitservice {
         }
     return list ; 
       }
-    public static List<produit> selectProduit1 ()
+    public List<produit> selectProduit1 ()
     {
         List<produit> list =new ArrayList<>() ; 
     String req ; 
@@ -149,7 +149,40 @@ public class produitservice {
    
     
     
+    public static void commanderProduit(produit p){
+        String req="UPDATE produit SET quantite=quantite-1 WHERE id =?" ; 
+        try { 
+            PreparedStatement ste = ds.getConnection().prepareStatement(req) ;
+             ste.setInt(1,p.getId()) ;
+         
+           
+            ste.executeUpdate() ; 
+            
+        } catch (SQLException ex) {
+        }   
     
+        
+    }
+      public List<produit> getStatCat() {
+        String req = "select count(*) as nb,type from produit group by type";
+        List<produit> liste = new ArrayList<produit>();
+        try {
+              PreparedStatement ste = ds.getConnection().prepareStatement(req) ;
+             ResultSet result =ste.executeQuery() ;
+        
+           
+            while (result.next()) {
+                produit re = new produit(result.getString("type"),result.getDouble("nb"));
+                liste.add(re);
+
+            }
+        } catch (Exception e) {
+          
+        }
+        return liste;
+    }
+      
+
     
     
 }

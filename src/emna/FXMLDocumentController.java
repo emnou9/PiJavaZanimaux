@@ -6,14 +6,18 @@
 package emna;
 
 import com.jfoenix.controls.JFXButton;
+import com.jfoenix.controls.JFXTextField;
 import entities.produit;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import static java.lang.System.exit;
 import java.net.URL;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -25,10 +29,14 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Group;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.chart.PieChart;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -50,7 +58,12 @@ import util.DataSource;
  * @author Sofiene Laouini
  */
 public class FXMLDocumentController implements Initializable {
+    int index;
+    produit selectedProduct;
         private PreparedStatement preparedStatement;
+        produitservice Service = new produitservice();
+        List<produit> MyList=Service.selectProduit1();
+        ObservableList<produit> listeProduit = FXCollections.observableArrayList(Service.selectProduit1());
     ResultSet rs;
     private Label label;
     @FXML
@@ -75,16 +88,45 @@ public class FXMLDocumentController implements Initializable {
     private JFXButton closebutton;
     @FXML
     private JFXButton exportBT;
+    @FXML
+    private JFXButton commanderBT;
+    @FXML
+    private JFXTextField IdProduit;
+    @FXML
+    private JFXTextField NomProduitTextField;
+
+    @FXML
+    private JFXTextField QuantiteProduitTextField;
+    @FXML
+    private JFXTextField PrixProduitTextField;
+    @FXML
+    private JFXTextField DescriptionProduitTextField;
+    @FXML
+    private ChoiceBox<String> tchoice;
+    @FXML
+    private JFXButton stat;
+    @FXML
+    private Label user;
     
     
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         
+      
+      
+               ObservableList<String> c = FXCollections.observableArrayList("Accesoires","produits de lavage ","niches");
+                tchoice.setItems(c);
+        IdProduit.setVisible(false);
+        NomProduitTextField.setVisible(false);
         
-        produitservice Service = new produitservice();
+        QuantiteProduitTextField.setVisible(false);
+        PrixProduitTextField.setVisible(false);
+        DescriptionProduitTextField.setVisible(false);
+          tchoice.setVisible(false);
         
-        ObservableList<produit> listeProduit = FXCollections.observableArrayList(Service.selectProduit1());
+        
+        
         table.setItems(listeProduit);
         id.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<produit, String>, ObservableValue<String>>() {
             @Override
@@ -165,19 +207,20 @@ public class FXMLDocumentController implements Initializable {
 
 
     @FXML
-    private void modifier(ActionEvent event) {
-                try {
-            Parent root = FXMLLoader.load(getClass().getResource("Modifier.fxml"));
+    private void modifier(ActionEvent event) throws IOException {
+
+        produit newProduit = new produit(NomProduitTextField.getText(),tchoice.getValue(),Integer.parseInt(QuantiteProduitTextField.getText())
+                , Integer.parseInt(PrixProduitTextField.getText()),DescriptionProduitTextField.getText());
+               
+                Service.updateProduit(newProduit,selectedProduct.getId());
+                 Parent root = FXMLLoader.load(getClass().getResource("FXMLDocument.fxml"));
             Scene scene = new Scene(root);
             scene.setFill(Color.TRANSPARENT);
-            Stage s = (Stage) this.table.getScene().getWindow();
+            Stage s = (Stage)((Node)event.getSource()).getScene().getWindow();
 //            s.initStyle(StageStyle.TRANSPARENT);
-            s.setTitle("Ajout Produit");
+            s.setTitle("Afficher Produit");
             s.setScene(scene);
             s.show();
-        } catch (IOException ex) {
-            Logger.getLogger(FXMLDocumentController.class.getName()).log(Level.SEVERE, null, ex);
-        }
     }
 
     @FXML
@@ -197,11 +240,62 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void closeButtonAction(ActionEvent event) {
+        exit(0);
+    }
+
+
+    @FXML
+    private void commander(ActionEvent event) throws IOException {
+       
     }
 
     @FXML
-    private void exportToPDF(ActionEvent event) throws SQLException, FileNotFoundException, IOException {
-        DataSource ds =DataSource.getInstance();
+    private void RecupererProduit(MouseEvent event) {
+        IdProduit.setVisible(true);
+        NomProduitTextField.setVisible(true);
+        tchoice.setVisible(true);
+        QuantiteProduitTextField.setVisible(true);
+        PrixProduitTextField.setVisible(true);
+        DescriptionProduitTextField.setVisible(true);
+         selectedProduct=table.getSelectionModel().getSelectedItem();
+         
+        IdProduit.setText(""+selectedProduct.getId());
+        NomProduitTextField.setText(selectedProduct.getNomProduit());
+        tchoice.setValue(selectedProduct.getType());
+       
+        QuantiteProduitTextField.setText(""+selectedProduct.getQuantite());
+        PrixProduitTextField.setText(""+selectedProduct.getPrix());
+        DescriptionProduitTextField.setText(selectedProduct.getDescription());
+    }
+
+    @FXML
+    private void statistique(ActionEvent event) {
+        Scene scene = new Scene(new Group());
+        Stage mainStage = new Stage();
+        mainStage.setWidth(500);
+        mainStage.setHeight(500);
+ 
+        List<produit> liste = new ArrayList<produit>();
+     
+        liste = new produitservice().getStatCat();
+        ObservableList<PieChart.Data> pieChartData
+                = FXCollections.observableArrayList();
+        for (int i = 0; i < liste.size(); i++) {
+            pieChartData.add(new PieChart.Data(liste.get(i).getType(), liste.get(i).getStat()));
+
+        }
+        final PieChart chart = new PieChart(pieChartData);
+        chart.setTitle("Produit Par type");
+
+        ((Group) scene.getRoot()).getChildren().add(chart);
+        mainStage.setScene(scene);
+        mainStage.show();
+
+    }
+
+    @FXML
+    private void exportToExcel(ActionEvent event) throws SQLException, FileNotFoundException, IOException {
+                DataSource ds =DataSource.getInstance();
         String query ="SELECT * from produit";
         preparedStatement = ds.getConnection().prepareStatement(query);
              rs=preparedStatement.executeQuery();
@@ -212,7 +306,7 @@ public class FXMLDocumentController implements Initializable {
                 header.createCell(0).setCellValue("ID");
                 header.createCell(1).setCellValue("Nom Produit");
                 header.createCell(2).setCellValue("Type");
-                header.createCell(3).setCellValue("Quantitée");
+                header.createCell(3).setCellValue("Quantité");
                 header.createCell(4).setCellValue("Prix");
                 header.createCell(5).setCellValue("Description");
                 int index =1;
@@ -231,16 +325,11 @@ public class FXMLDocumentController implements Initializable {
                 wb.write(fileOut);
                 fileOut.close();
                 Alert alert = new Alert(AlertType.INFORMATION);
-                alert.setTitle("PDF export");
+                alert.setTitle("Excel export");
                 alert.setHeaderText(null);
                 alert.setContentText("Fichier Excel créé");
                 alert.showAndWait();
                 preparedStatement.close();
                 rs.close();
-                
-                
-                
-                
-            
     }
 }
